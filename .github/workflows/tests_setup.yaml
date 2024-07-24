@@ -4,15 +4,13 @@ jobs:
   tests-coverage:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Setting up envirolment
         uses: actions/checkout@v4
-
-      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 22      
           cache: yarn
-          cache-dependency-path: yarn.lock    
+          cache-dependency-path: "/yarn.lock"          
 
       - name: Install dependencies
         run: yarn
